@@ -1,0 +1,1851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Tummy GPS | Food stalls at LPU</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Sans:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="project.css">
+    <script src="script.js" defer></script>
+    <script src="feedback.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <div class="brand"><span class="pin"></span><h1>Tummy GPS</h1></div>
+        <p>Find the nearest food stall around LPU campus.</p>
+        <div class="search">
+            <input type="search" id="searchInput" placeholder="Search a dish, e.g. chaap, momos, dosa" aria-label="Search a dish">
+        </div>
+    </header>
+
+    <main>
+
+        <!-- location filter -->
+        <div class="chips" role="group" aria-label="Filter by location">
+            <button class="chip" data-loc="all" aria-pressed="true">All stalls</button>
+            <button class="chip" data-loc="Block_34" aria-pressed="false">Block_34</button>
+            <button class="chip" data-loc="BH-1" aria-pressed="false">BH-1</button>
+            <button class="chip" data-loc="Uni-Hospital" aria-pressed="false">Uni-Hospital</button>
+        </div>
+
+        <!-- shows "dish is available at: stall name" -->
+        <p id="resultSummary" hidden></p>
+
+        <!-- Stall 1: Chaap Express -->
+        <article data-loc="Block_34">
+            <div class="photo">
+                <img src="chapp express pic.jpeg" alt="chapp express">
+                <span class="tag">Block_34</span>
+            </div>
+            <h2>Chaap Express</h2>
+            <p class="where">📍 Near Block 34, backside 34 block.</p>
+            <div class="meta">
+                <div class="feedback" data-stall="Chaap Express"></div>
+                <a class="fb" href="https://docs.google.com/forms/d/e/1FAIpQLSdh4ymYw7kTpld03wAZ0K6SaILGvMwNrGmj-7fKPShJpJdGlg/viewform?usp=pp_url&amp;entry.1842969933=Chaap+Express" target="_blank" rel="noopener noreferrer">Give feedback</a>
+            </div>
+            <details>
+                <summary>Menu</summary>
+                <section>
+                    <ul>
+                        <li>Malai Chaap With Naan - ₹90</li>
+                        <li>Afgani Chaap With Naan - ₹90</li>
+                        <li>Irani Chaap With Naan - ₹90</li>
+                        <li>Masala Chaap With Naan - ₹90</li>
+                        <li>Tandoori Chaap With Naan - ₹90</li>
+                        <li>Achari Chaap With Naan - ₹90</li>
+                        <li>Pudina Chaap With Naan - ₹90</li>
+                        <li>Paneer Tikka With Naan - ₹90</li>
+                        <li>Extra Naan 1Pcs - ₹15</li>
+                    </ul>
+                </section>
+            </details>
+        </article>
+
+        <!-- Stall 2: North East Kitchen -->
+        <article data-loc="Block_34">
+            <div class="photo">
+                <img src="northeastkitchenpic.jpeg" alt="North East Kitchen">
+                <span class="tag">Block_34</span>
+            </div>
+            <h2>North East Kitchen</h2>
+            <p class="where">📍 Near Block 34, backside 34 block.</p>
+            <div class="meta">
+                <div class="feedback" data-stall="North East Kitchen"></div>
+                <a class="fb" href="https://docs.google.com/forms/d/e/1FAIpQLSdh4ymYw7kTpld03wAZ0K6SaILGvMwNrGmj-7fKPShJpJdGlg/viewform?usp=pp_url&amp;entry.1842969933=North+East+Kitchen" target="_blank" rel="noopener noreferrer">Give feedback</a>
+            </div>
+            <details>
+                <summary>Menu</summary>
+                <section>
+                    <h3>Northeast Specials</h3>
+                    <ul>
+                        <li>Mughlai Paratha - ₹80</li>
+                        <li>Aloo Chop - ₹150</li>
+                        <li>Singara - ₹150</li>
+                        <li>Cutlet - ₹150</li>
+                        <li>Chilli Tofu - ₹60</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Potato Items</h3>
+                    <ul>
+                        <li>Plain Fries - ₹60</li>
+                        <li>Masala Fries - ₹80</li>
+                        <li>Peri Peri Potato - ₹60</li>
+                        <li>Chilli Potato - ₹80</li>
+                        <li>Honey Chilli Potato - ₹100</li>
+                        <li>Aloo Bharta / Aloo Pitika - ₹70</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Noodles</h3>
+                    <ul>
+                        <li>Veg Noodles - ₹50</li>
+                        <li>Corn Noodles - ₹50</li>
+                        <li>Paneer Noodles - ₹70</li>
+                        <li>Hakka Noodles - ₹70</li>
+                        <li>Chilli Paneer Noodles - ₹100</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Spring Roll</h3>
+                    <ul>
+                        <li>Spring Roll - ₹60</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Momos</h3>
+                    <ul>
+                        <li>Steamed Momos - ₹50</li>
+                        <li>Mushroom Momos - ₹60</li>
+                        <li>Tandoori Momos - ₹70</li>
+                        <li>Chilli Garlic Momos - ₹70</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Combos</h3>
+                    <ul>
+                        <li>Noodles + Chilli Potato - ₹100</li>
+                        <li>Honey Chilli Potato + Manchurian - ₹120</li>
+                        <li>Noodles + Cheese Chilli - ₹120</li>
+                    </ul>
+                </section>
+            </details>
+        </article>
+
+        <!-- Stall 3: Amritsari Kulcha -->
+        <article data-loc="BH-1">
+            <div class="photo">
+                <img src="amristari_kulcha_photo.jpeg" alt="Amritsari Kulcha stall">
+                <span class="tag tag-bh1">BH-1</span>
+            </div>
+            <h2>Amritsari Kulcha</h2>
+            <p class="where">📍 Near BH-1 (bh-1 back side)</p>
+            <div class="meta">
+                <div class="feedback" data-stall="Amritsari Kulcha"></div>
+                <a class="fb" href="https://docs.google.com/forms/d/e/1FAIpQLSdh4ymYw7kTpld03wAZ0K6SaILGvMwNrGmj-7fKPShJpJdGlg/viewform?usp=pp_url&amp;entry.1842969933=Amritsari+Kulcha" target="_blank" rel="noopener noreferrer">Give feedback</a>
+            </div>
+            <details>
+                <summary>Menu</summary>
+                <section>
+                    <h3>Soya Tandoori Items</h3>
+                    <ul>
+                        <li>Spl. Malai Chaap - ₹99</li>
+                        <li>Spl. Punjabi Chaap - ₹99</li>
+                        <li>Spl. Afghani Chaap - ₹99</li>
+                        <li>Spl. Lemon Chaap - ₹99</li>
+                        <li>Spl. Sunny Leon Chaap - ₹99</li>
+                        <li>Spl. Khaliffa Chaap - ₹99</li>
+                        <li>Spl. Stuff Chaap - ₹99</li>
+                        <li>Pure Veg. Chicken Tikka Chaap - ₹99</li>
+                        <li>Pure Veg. Fish Tikka Chaap - ₹99</li>
+                        <li>Pure Veg. Tandoori Leg (2 Pcs) - ₹110</li>
+                        <li>Spl. Veg. Tandoori Chaap - ₹99</li>
+                        <li>Spl. Aachari Chaap - ₹99</li>
+                        <li>Spl. Pudina Chaap - ₹99</li>
+                        <li>Spl. Nurani Chaap - ₹99</li>
+                        <li>Spl. Chilli Garlic Chaap - ₹99</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Soya Gravy Items</h3>
+                    <ul>
+                        <li>Pure Veg. Mutton Gravy (Spicy) - ₹130</li>
+                        <li>Pure Veg. Rogan Josh Chaap (Spicy) - ₹130</li>
+                        <li>Pure Veg. Rara Meat Chaap - ₹130</li>
+                        <li>Pure Veg. Butter Chicken Chaap - ₹130</li>
+                        <li>Pure Veg. Tawa Tikka Chaap - ₹130</li>
+                        <li>Pure Veg. Black Mutton - ₹130</li>
+                        <li>Pure Veg. Punjabi Kukkad Chaap - ₹130</li>
+                        <li>Pure Veg. Masala Chicken Chaap - ₹130</li>
+                        <li>Pure Veg. Keema Kalaji Chaap Gravy - ₹130</li>
+                        <li>Pure Veg. Handi Chicken Chaap Gravy (Spicy) - ₹130</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Tikka Items</h3>
+                    <ul>
+                        <li>Mushroom Tikka - ₹99</li>
+                        <li>Paneer Tikka - ₹99</li>
+                        <li>Aachari Paneer Tikka - ₹99</li>
+                        <li>Pudina Paneer Tikka - ₹99</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Tandoori Combos</h3>
+                    <ul>
+                        <li>Malai Chaap (Butter Naan) - ₹110</li>
+                        <li>Punjabi Chaap (Butter Naan) Spicy - ₹110</li>
+                        <li>Afghani Chaap + (Butter Naan) - ₹110</li>
+                        <li>Lemon Chaap + (Butter Naan) - ₹110</li>
+                        <li>Tandoori Chaap + (Butter Naan) - ₹110</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Gravy Combos</h3>
+                    <ul>
+                        <li>Tawa Chaap + (Butter Naan) - ₹120</li>
+                        <li>Rogan Josh + (Butter Naan) - ₹120</li>
+                        <li>Rara Meat Chaap + (Butter Naan) - ₹120</li>
+                        <li>Mutton Gravy + (Butter Naan) - ₹120</li>
+                        <li>Butter Chicken + (Butter Naan) - ₹120</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Paneer Combos</h3>
+                    <ul>
+                        <li>Paneer Butter Masala + (Butter Naan) - ₹120</li>
+                        <li>Shahi Paneer + (Butter Naan) - ₹120</li>
+                        <li>Paneer Labadar + (Butter Naan) - ₹120</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Special Paneer Gravy Items</h3>
+                    <ul>
+                        <li>Special Kadai Paneer Gravy - ₹130</li>
+                        <li>Special Lemon Kadai Paneer Gravy - ₹130</li>
+                        <li>Shahi Paneer Gravy - ₹130</li>
+                        <li>Paneer Lababdar Gravy - ₹130</li>
+                        <li>Paneer Tikka Butter Masala Gravy - ₹130</li>
+                        <li>Dharti Ke Nazare (Paneer Chaap Mix) - ₹140</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Soya Tandoori Rolls</h3>
+                    <ul>
+                        <li>Malai Chaap Roll - ₹80</li>
+                        <li>Afghan Chaap Roll - ₹80</li>
+                        <li>Punjabi Chaap Roll - ₹80</li>
+                        <li>Lemon Chaap Roll - ₹80</li>
+                        <li>Tandoori Chaap Roll - ₹80</li>
+                        <li>Pure Veg. Chicken Tikka Roll - ₹90</li>
+                        <li>Pure Veg. Kabab Roll - ₹90</li>
+                        <li>Pure Veg. Paneer Roll - ₹90</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Thali Special</h3>
+                    <ul>
+                        <li>Amritsari Aloo Kulcha (Channe + Raita) - ₹80</li>
+                        <li>Amritsari Gobi Kulcha (Channe + Raita) - ₹80</li>
+                        <li>Amritsari Green Chilly Kulcha (Channe + Raita) - ₹80</li>
+                        <li>Amritsari Mix Kulcha (Channe + Raita) - ₹80</li>
+                        <li>Amritsari Garlic Kulcha (Channe + Raita) - ₹80</li>
+                        <li>Amritsari Paneer Kulcha (Channe + Raita) - ₹110</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Breads</h3>
+                    <ul>
+                        <li>Butter Naan - ₹30</li>
+                        <li>Aloo Naan - ₹40</li>
+                        <li>Paneer Naan - ₹60</li>
+                        <li>Gobi Naan - ₹40</li>
+                        <li>Mix Naan - ₹50</li>
+                        <li>Garlic Naan - ₹40</li>
+                        <li>Green Chilly Naan - ₹40</li>
+                        <li>Red Chilly Naan - ₹40</li>
+                        <li>Onion Naan - ₹40</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Desi Munch &amp; More</h3>
+                    <ul>
+                        <li>Choley Bhature - ₹70</li>
+                        <li>Aloo Poori - ₹60</li>
+                    </ul>
+                </section>
+                <p class="note">Packing charges: ₹10 extra</p>
+            </details>
+        </article>
+
+        <!-- Stall 4: Hangouts -->
+        <article data-loc="BH-1">
+            <div class="photo">
+                <img src="hangouts_photo.jpeg" alt="Hangouts stall">
+                <span class="tag tag-bh1">BH-1</span>
+            </div>
+            <h2>Hangouts</h2>
+            <p class="where">📍 Near BH-1 (bh-1 back side)</p>
+            <div class="meta">
+                <div class="feedback" data-stall="Hangouts"></div>
+                <a class="fb" href="https://docs.google.com/forms/d/e/1FAIpQLSdh4ymYw7kTpld03wAZ0K6SaILGvMwNrGmj-7fKPShJpJdGlg/viewform?usp=pp_url&amp;entry.1842969933=Hangouts" target="_blank" rel="noopener noreferrer">Give feedback</a>
+            </div>
+            <details>
+                <summary>Menu</summary>
+                <section>
+                    <h3>Dosa</h3>
+                    <ul>
+                        <li>Plain Dosa - ₹50</li>
+                        <li>Paper Dosa - ₹60</li>
+                        <li>Ghee Dosa - ₹60</li>
+                        <li>Butter Dosa - ₹60</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Karam &amp; Podi Dosa</h3>
+                    <ul>
+                        <li>Karam Dosa - ₹70</li>
+                        <li>Ghee Karam Dosa - ₹80</li>
+                        <li>Butter Karam Dosa - ₹90</li>
+                        <li>Podi Dosa - ₹70</li>
+                        <li>Ghee Podi Dosa - ₹80</li>
+                        <li>Butter Podi Dosa - ₹80</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Masala Dosa</h3>
+                    <ul>
+                        <li>Masala Dosa - ₹70</li>
+                        <li>Onion Masala Dosa - ₹80</li>
+                        <li>Butter Masala Dosa - ₹80</li>
+                        <li>Ghee Masala Dosa - ₹80</li>
+                        <li>Karam Masala Dosa - ₹80</li>
+                        <li>Mysore Masala Dosa - ₹90</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Upma Dosa</h3>
+                    <ul>
+                        <li>Upma Dosa - ₹70</li>
+                        <li>Ghee Upma Dosa - ₹80</li>
+                        <li>Karam Upma Dosa - ₹80</li>
+                        <li>Onion Upma Dosa - ₹80</li>
+                        <li>Butter Upma Dosa - ₹80</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Onion Dosa</h3>
+                    <ul>
+                        <li>Onion Dosa - ₹70</li>
+                        <li>Ghee Onion Dosa - ₹80</li>
+                        <li>Onion Karam Dosa - ₹80</li>
+                        <li>Ghee Onion Karam Dosa - ₹80</li>
+                        <li>Butter Onion Dosa - ₹80</li>
+                        <li>Butter Onion Karam Dosa - ₹90</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Rava Dosa</h3>
+                    <ul>
+                        <li>Plain Rava Dosa - ₹80</li>
+                        <li>Onion Rava Dosa - ₹90</li>
+                        <li>Masala Rava Dosa - ₹90</li>
+                        <li>Upma Rava Dosa - ₹90</li>
+                        <li>Paneer Rava Dosa - ₹120</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Pesarattu</h3>
+                    <ul>
+                        <li>Plain Pesarattu - ₹60</li>
+                        <li>Karam Pesarattu - ₹70</li>
+                        <li>Onion Pesarattu - ₹80</li>
+                        <li>Masala Pesarattu - ₹80</li>
+                        <li>Upma Pesarattu - ₹80</li>
+                        <li>Onion Karam Pesarattu - ₹90</li>
+                        <li>Karam Upma Pesarattu - ₹90</li>
+                        <li>Onion Upma Pesarattu - ₹90</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Set Dosa</h3>
+                    <ul>
+                        <li>Plain Set Dosa (2 Pcs) - ₹80</li>
+                        <li>Karam Set Dosa (2 Pcs) - ₹90</li>
+                        <li>Onion Set Dosa (2 Pcs) - ₹90</li>
+                        <li>Paneer Set Dosa (2 Pcs) - ₹120</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Uttapam</h3>
+                    <ul>
+                        <li>Plain Uttapam (1 Pc) - ₹70</li>
+                        <li>Onion Uttapam (1 Pc) - ₹80</li>
+                        <li>Mix Uttapam (1 Pc) - ₹90</li>
+                        <li>Paneer Uttapam (1 Pc) - ₹120</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Dosa Specials</h3>
+                    <ul>
+                        <li>Corn Dosa - ₹90</li>
+                        <li>Corn Masala Dosa - ₹100</li>
+                        <li>Onion Corn Dosa - ₹100</li>
+                        <li>Corn Paneer Dosa - ₹130</li>
+                        <li>Cheese Corn Dosa - ₹130</li>
+                        <li>Ragi Dosa - ₹80</li>
+                        <li>Tomato Dosa - ₹70</li>
+                        <li>Beet Root Dosa - ₹70</li>
+                        <li>Palak Dosa - ₹70</li>
+                        <li>Carrot Dosa - ₹70</li>
+                        <li>Paneer Dosa - ₹120</li>
+                        <li>Cheese Dosa - ₹110</li>
+                        <li>Hangouts Spl. Dosa - ₹130</li>
+                        <li>Nellore Karam Dosa - ₹70</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Idli</h3>
+                    <ul>
+                        <li>Idli (4 Pcs) - ₹50</li>
+                        <li>Ghee Idli (3 Pcs) - ₹60</li>
+                        <li>Podi Idli (3 Pcs) - ₹60</li>
+                        <li>Ghee Podi Idli (3 Pcs) - ₹70</li>
+                        <li>Karam Idli (3 Pcs) - ₹60</li>
+                        <li>Ghee Karam Idli (3 Pcs) - ₹70</li>
+                        <li>Butter Idli (3 Pcs) - ₹60</li>
+                        <li>Butter Karam Idli (3 Pcs) - ₹70</li>
+                        <li>Fried Idli (3 Pcs) - ₹70</li>
+                        <li>Ragi Idli (3 Pcs) - ₹60</li>
+                        <li>Button Idli - ₹70</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Upma</h3>
+                    <ul>
+                        <li>Upma - ₹50</li>
+                        <li>Semiya Upma - ₹60</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Vada &amp; Bonda</h3>
+                    <ul>
+                        <li>Vada (3 Pcs) - ₹60</li>
+                        <li>Medhu Vada (3 Pcs) - ₹60</li>
+                        <li>Mysore Bonda (6 Pcs) - ₹60</li>
+                        <li>Onion Bonda (7 Pcs) - ₹60</li>
+                        <li>Punugulu (16 Pcs) - ₹60</li>
+                    </ul>
+                </section>
+                <p class="note">Packing charges: ₹5 extra</p>
+            </details>
+        </article>
+
+        <!-- Stall 5: Shakes Fusion -->
+        <article data-loc="Block_34">
+            <div class="photo">
+                <img src="shakefusion.png" alt="Shakes Fusion stall">
+                <span class="tag">Block_34</span>
+            </div>
+            <h2>Shakes Fusion</h2>
+            <p class="where">📍 Near Block 34, backside 34 block.</p>
+            <div class="meta">
+                <div class="feedback" data-stall="Shakes Fusion"></div>
+                <a class="fb" href="https://docs.google.com/forms/d/e/1FAIpQLSdh4ymYw7kTpld03wAZ0K6SaILGvMwNrGmj-7fKPShJpJdGlg/viewform?usp=pp_url&amp;entry.1842969933=Shakes+Fusion" target="_blank" rel="noopener noreferrer">Give feedback</a>
+            </div>
+            <details>
+                <summary>Menu</summary>
+                <section>
+                    <h3>Shakes</h3>
+                    <ul>
+                        <li>Banana Shake - ₹50</li>
+                        <li>Chocolate Shake - ₹50</li>
+                        <li>Cold Coffee - ₹50</li>
+                        <li>Oreo Milk Shake - ₹50</li>
+                        <li>Strawberry Shake - ₹50</li>
+                        <li>Papaya Shake - ₹50</li>
+                        <li>Butter Scotch - ₹50</li>
+                        <li>Mango Shake - ₹50</li>
+                        <li>Apple Shake - ₹50</li>
+                        <li>Vanilla Shake - ₹50</li>
+                        <li>Kesar Elaichi - ₹50</li>
+                        <li>Kesar Badam - ₹50</li>
+                        <li>Pineapple Shake - ₹50</li>
+                        <li>Kiwi Shake - ₹50</li>
+                        <li>Brahmi Shake - ₹50</li>
+                        <li>Black Currant Shake - ₹50</li>
+                        <li>Litchi Shake - ₹50</li>
+                        <li>Mango Lassi - ₹50</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Thick Ice-Cream Shakes</h3>
+                    <ul>
+                        <li>KitKat Shake - ₹70</li>
+                        <li>Chocopie Shake - ₹70</li>
+                        <li>Brown Shake - ₹70</li>
+                        <li>Oreo Shake - ₹70</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Juice</h3>
+                    <ul>
+                        <li>Mausami Juice - ₹50</li>
+                        <li>Carrot Juice - ₹50</li>
+                        <li>Orange Juice - ₹50</li>
+                        <li>Mix Juice - ₹50</li>
+                        <li>Muskmelon Juice - ₹50</li>
+                        <li>Pineapple Juice - ₹50</li>
+                        <li>Watermelon Juice - ₹50</li>
+                        <li>Pomegranate Juice - ₹50</li>
+                        <li>Apple Juice - ₹50</li>
+                        <li>Grape Juice - ₹50</li>
+                        <li>Fresh Lime Soda - ₹50</li>
+                        <li>Sugar Cane Juice - ₹50</li>
+                        <li>Fresh Lime Water - ₹50</li>
+                        <li>Fresh Fruit Salad - ₹50</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Mojito</h3>
+                    <ul>
+                        <li>Mint Mojito - ₹70</li>
+                        <li>Virgin Mojito - ₹70</li>
+                        <li>Green Apple Mojito - ₹70</li>
+                        <li>Blue Curacao Mojito - ₹70</li>
+                        <li>Masala Lemonade - ₹70</li>
+                        <li>Watermelon Mojito - ₹70</li>
+                        <li>Lemon Iced Tea - ₹70</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Cold Coffee</h3>
+                    <ul>
+                        <li>Cold Coffee - ₹70</li>
+                        <li>Double Shot Cold Coffee - ₹70</li>
+                        <li>Hazelnut Cold Coffee - ₹70</li>
+                        <li>Caramel Cold Coffee - ₹70</li>
+                        <li>Vanilla Cold Coffee - ₹70</li>
+                        <li>Mint Velvet Cold Coffee - ₹70</li>
+                        <li>Tiramisu Cold Coffee - ₹70</li>
+                        <li>Irish Creme Cold Coffee - ₹70</li>
+                        <li>Simple Brownie - ₹50</li>
+                        <li>Brownie Single Scoop - ₹70</li>
+                        <li>Brownie Double Scoop - ₹90</li>
+                    </ul>
+                </section>
+            </details>
+        </article>
+
+        <!-- Stall 6: Kamal Juice and Shake -->
+        <article data-loc="Block_34">
+            <div class="photo">
+                <img src="kamal_juice.png" alt="Kamal Juice and Shake Corner stall">
+                <span class="tag">Block_34</span>
+            </div>
+            <h2>Kamal Juice and Shake</h2>
+            <p class="where">📍 Near Block 34, backside 34 block</p>
+            <div class="meta">
+                <div class="feedback" data-stall="Kamal Juice and Shake Corner"></div>
+                <a class="fb" href="https://docs.google.com/forms/d/e/1FAIpQLSdh4ymYw7kTpld03wAZ0K6SaILGvMwNrGmj-7fKPShJpJdGlg/viewform?usp=pp_url&amp;entry.1842969933=Kamal+Juice+and+Shake+Corner" target="_blank" rel="noopener noreferrer">Give feedback</a>
+            </div>
+            <details>
+                <summary>Menu</summary>
+                <section>
+                    <h3>Shakes</h3>
+                    <ul>
+                        <li>Banana Shake - ₹50</li>
+                        <li>Butter Scotch Shake - ₹50</li>
+                        <li>Chocolate Shake - ₹50</li>
+                        <li>Mango Shake - ₹50</li>
+                        <li>Strawberry Shake - ₹50</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Coffee &amp; Lassi</h3>
+                    <ul>
+                        <li>Cold Coffee - ₹50</li>
+                        <li>Mango Lassi - ₹50</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Soda</h3>
+                    <ul>
+                        <li>Lemon Soda - ₹30</li>
+                    </ul>
+                </section>
+            </details>
+        </article>
+
+                <!-- Stall 7: Apna Coffee Wala -->
+        <article data-loc="BH-1">
+            <div class="photo">
+                <img src="apnaCoffeeWala.jpeg" alt="Apna Coffee Wala stall">
+                <span class="tag">BH-1</span>
+            </div>
+            <h2>Apna Coffee Wala</h2>
+            <p class="where">📍 Near BH-1 (bh-1 back side)</p>
+            <div class="meta">
+                <div class="feedback" data-stall="Apna Coffee Wala"></div>
+                <a class="fb" href="https://docs.google.com/forms/d/e/1FAIpQLSdh4ymYw7kTpld03wAZ0K6SaILGvMwNrGmj-7fKPShJpJdGlg/viewform?usp=pp_url&amp;entry.1842969933=Apna+Coffee+Wala" target="_blank" rel="noopener noreferrer">Give feedback</a>
+            </div>
+            <details>
+                <summary>Menu</summary>
+                <section>
+                    <h3>Cold Coffee (2 sizes)</h3>
+                    <ul>
+                        <li>Regular Cold Coffee - ₹60 / ₹80</li>
+                        <li>Iced Americano - ₹60 / ₹80</li>
+                        <li>Hazelnut Frappe - ₹70 / ₹90</li>
+                        <li>Caramel Frappe - ₹70 / ₹90</li>
+                        <li>Brownie Cold Coffee - ₹80 / ₹100</li>
+                        <li>Kitkat Coffee - ₹80 / ₹100</li>
+                        <li>Oreo Coffee - ₹80 / ₹100</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Premium Cold Coffee (2 sizes)</h3>
+                    <ul>
+                        <li>Davidoff Coffee - ₹110 / ₹130</li>
+                        <li>Iced Cappuccino - ₹70 / ₹90</li>
+                        <li>Cappuccino Frappe - ₹80 / ₹100</li>
+                        <li>Boba Cold Coffee - ₹70 / ₹90</li>
+                        <li>Mocha Coffee - ₹70 / ₹90</li>
+                        <li>Iced Mocha Latte - ₹100 / ₹120</li>
+                        <li>ACW Special Cold Coffee - ₹130 / ₹150</li>
+                        <li>Iced Latte - ₹90 / ₹110</li>
+                        <li>Mocha Latte - ₹100 / ₹120</li>
+                        <li>Vietnamese Cold Coffee - ₹90 / ₹110</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Hot Coffee (S / M / L)</h3>
+                    <ul>
+                        <li>Hot Coffee - ₹20 / ₹30 / ₹50</li>
+                        <li>Americano - ₹25 / ₹35 / ₹60</li>
+                        <li>Double Shot - ₹40 / ₹50 / ₹70</li>
+                        <li>Cappuccino - ₹40 / ₹50 / ₹70</li>
+                        <li>Hazelnut Hot Coffee - ₹50 / ₹60 / ₹80</li>
+                        <li>Caramel Hot Coffee - ₹50 / ₹60 / ₹80</li>
+                        <li>Vanilla Latte - ₹60 / ₹70 / ₹90</li>
+                        <li>Choco Moco Hot Coffee - ₹60 / ₹70 / ₹100</li>
+                        <li>Hot Chocolate - ₹50 / ₹60 / ₹70</li>
+                        <li>Hot Badam Milk - ₹50 / ₹60 / ₹70</li>
+                        <li>Nescafe Gold (M / L) - ₹50 / ₹70</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Hot Tea (S / M / L)</h3>
+                    <ul>
+                        <li>Regular Cutting Chai - ₹20 / ₹30 / ₹40</li>
+                        <li>Elaichi Chai - ₹30 / ₹40 / ₹50</li>
+                        <li>Ginger Chai - ₹30 / ₹40 / ₹50</li>
+                        <li>Kulhad Chai - ₹30 / ₹50 / ₹80</li>
+                        <li>Gur Wali Chai - ₹30 / ₹40 / ₹50</li>
+                        <li>Kadak Chai - ₹25 / ₹35 / ₹50</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Iced Tea &amp; Krushers</h3>
+                    <ul>
+                        <li>Nestle Iced Tea - ₹50</li>
+                        <li>Peach Iced Tea - ₹50</li>
+                        <li>Mint Iced Tea - ₹50</li>
+                        <li>Passion Fruit Iced Tea - ₹50</li>
+                        <li>Blue Lagoon Iced Tea - ₹50</li>
+                        <li>Green Apple Iced Tea - ₹50</li>
+                        <li>Green Mint Iced Tea - ₹50</li>
+                        <li>Watermelon Iced Tea - ₹50</li>
+                        <li>Cranberry Iced Tea - ₹50</li>
+                        <li>Mango Milk Boba Iced Tea - ₹80</li>
+                        <li>Chocolate Milk Boba Iced Tea - ₹80</li>
+                        <li>Strawberry Milk Boba Iced Tea - ₹80</li>
+                        <li>Black Currant Milk Boba Iced Tea - ₹80</li>
+                        <li>Krushers Brownie Krusher - ₹100</li>
+                        <li>Chocolate Krusher - ₹100</li>
+                        <li>Blueberry Krusher - ₹100</li>
+                        <li>Mango Krusher - ₹100</li>
+                        <li>Banana Caramel - ₹80</li>
+                        <li>Affogato - ₹100</li>
+                        <li>Kitkat Krusher - ₹100</li>
+                        <li>Oreo Krusher - ₹100</li>
+                        <li>Lotus Biscoff Krusher - ₹100</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>French Fries</h3>
+                    <ul>
+                        <li>Peri Peri Fries - ₹80</li>
+                        <li>Salted Fries - ₹70</li>
+                        <li>Cheese Fries - ₹110</li>
+                        <li>Fries with 3 Toppings with Mac Aloo Patty - ₹120</li>
+                        <li>Fries with 3 Toppings with Spicy Paneer Patty - ₹130</li>
+                        <li>Chipotle Fries - ₹110</li>
+                        <li>Mint Fries - ₹110</li>
+                        <li>Tandoori Fries - ₹110</li>
+                        <li>Makhani Fries - ₹110</li>
+                        <li>Hot n Spicy Fries - ₹130</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Sandwich</h3>
+                    <ul>
+                        <li>Aloo Patty Sandwich - ₹80</li>
+                        <li>Veggie Club Sandwich - ₹70</li>
+                        <li>Paneer Tikka Sandwich - ₹100</li>
+                        <li>Cheese Pizza Sandwich - ₹110</li>
+                        <li>Veg Deluxe Sandwich - ₹100</li>
+                        <li>Chipotle Sandwich - ₹120</li>
+                        <li>Special Nacho's Sandwich - ₹110</li>
+                        <li>No Oil Tofu Sandwich - ₹80</li>
+                        <li>Paneer Sandwich (25 gm protein) - ₹100</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Maggi</h3>
+                    <ul>
+                        <li>Desi Maggi - ₹50</li>
+                        <li>Firangi Maggi - ₹60</li>
+                        <li>Schezwan Maggi - ₹65</li>
+                        <li>Cheese Maggi - ₹70</li>
+                        <li>Cheese Corn Maggi - ₹75</li>
+                        <li>Peri-Peri Maggi - ₹65</li>
+                        <li>Paneer Maggi - ₹65</li>
+                        <li>Mushroom Maggi - ₹60</li>
+                        <li>Tandoori Maggi - ₹80</li>
+                        <li>Achari Maggi - ₹80</li>
+                        <li>Double Cheese Slice Maggi - ₹90</li>
+                        <li>Double Masala Maggi - ₹70</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Pasta</h3>
+                    <ul>
+                        <li>Red Sauce Pasta - ₹80</li>
+                        <li>White Sauce Pasta - ₹90</li>
+                        <li>Hot n Spicy Pasta - ₹100</li>
+                        <li>Mac n Cheese - ₹140</li>
+                        <li>Double Cheese Pasta - ₹130</li>
+                        <li>Mix Sauce Pasta - ₹100</li>
+                    </ul>
+                </section>
+                                <section>
+                    <h3>Dessert Menu</h3>
+                    <ul>
+                        <li>Hot Chocolava - ₹60</li>
+                        <li>Chocolava with Ice Cream - ₹70</li>
+                        <li>Hazelnut Chocolava with Ice Cream - ₹90</li>
+                        <li>Caramel Chocolava with Ice Cream - ₹90</li>
+                        <li>Hot Chocolate Brownie - ₹50</li>
+                        <li>Brownie with Ice Cream - ₹60</li>
+                        <li>Hazelnut Brownie with Ice Cream - ₹80</li>
+                        <li>Caramel Brownie with Ice Cream - ₹80</li>
+                        <li>Oreo Brownie with Ice Cream - ₹80</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Kulhad Chai &amp; Coffee (S / M / L)</h3>
+                    <ul>
+                        <li>Kulhad Chai - ₹30 / ₹40 / ₹50</li>
+                        <li>Kulhad Coffee - ₹30 / ₹40 / ₹50</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Hot Drinks (M / L)</h3>
+                    <ul>
+                        <li>Hot Badam Milk - ₹60 / ₹80</li>
+                        <li>Hot Bournvita - ₹60 / ₹80</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Winter Special</h3>
+                    <ul>
+                        <li>Hot Chocolate, Large - ₹80</li>
+                    </ul>
+                </section>
+                <p class="note">Add-on cheese: ₹10 extra</p>
+            </details>
+        </article>
+
+                <!-- Stall 8: Yippee Cafe -->
+        <article data-loc="BH-1">
+            <div class="photo">
+                <img src="yippee.jpeg" alt="Yippee Cafe stall">
+                <span class="tag">BH-1</span>
+            </div>
+            <h2>Yippee Cafe</h2>
+            <p class="where">📍 Near Central Mess -1,2</p>
+            <div class="meta">
+                <div class="feedback" data-stall="Yippee Cafe"></div>
+                <a class="fb" href="https://docs.google.com/forms/d/e/1FAIpQLSdh4ymYw7kTpld03wAZ0K6SaILGvMwNrGmj-7fKPShJpJdGlg/viewform?usp=pp_url&amp;entry.1842969933=Yippee+Cafe" target="_blank" rel="noopener noreferrer">Give feedback</a>
+            </div>
+            <details>
+                <summary>Menu</summary>
+                <section>
+                    <h3>Yippee Bowls</h3>
+                    <ul>
+                        <li>Yippee Magic Masala - ₹60</li>
+                        <li>Yippee Mood Masala - ₹70</li>
+                        <li>Yippee Veg Noodles - ₹70</li>
+                        <li>Yippee Corn Noodles - ₹70</li>
+                        <li>Yippee Atta Noodles - ₹70</li>
+                        <li>Schezwan Noodles - ₹70</li>
+                        <li>Cheesy Yippee Noodles - ₹70</li>
+                        <li>Yippee Tandoori Noodles - ₹70</li>
+                        <li>Yippee Korean Noodles - ₹70</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Pasta Bowls</h3>
+                    <ul>
+                        <li>Cheese Pasta - ₹100</li>
+                        <li>Masala Pasta - ₹100</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Rice Bowls (New Launch)</h3>
+                    <ul>
+                        <li>Veg Rice Bowl - ₹80</li>
+                        <li>Corn Rice Bowl - ₹80</li>
+                        <li>Paneer Rice Bowl - ₹110</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Fresh Sandwiches</h3>
+                    <ul>
+                        <li>Small Veg Grilled Sandwich (2 slices) - ₹50</li>
+                        <li>Veg Grilled Sandwich - ₹90</li>
+                        <li>Paneer Tikka Sandwich - ₹90</li>
+                        <li>Peri Peri Grilled Sandwich - ₹90</li>
+                        <li>Cheese Grilled Sandwich - ₹90</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Wraps</h3>
+                    <ul>
+                        <li>Veggie Wrap - ₹80</li>
+                        <li>Peri Peri Wrap - ₹80</li>
+                        <li>Chilli Potato Wrap - ₹80</li>
+                        <li>Paneer Wrap - ₹80</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Burgers</h3>
+                    <ul>
+                        <li>Aloo Tikki Burger - ₹80</li>
+                        <li>Veggie Burger - ₹80</li>
+                        <li>Cheese Burger - ₹80</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Sunbean Cold Coffee</h3>
+                    <ul>
+                        <li>Classic Cold Coffee - ₹90</li>
+                        <li>Irish Cold Coffee - ₹90</li>
+                        <li>Hazelnut Cold Coffee - ₹90</li>
+                        <li>Caramel Cold Coffee - ₹90</li>
+                        <li>Chocolate Cold Coffee - ₹90</li>
+                    </ul>
+                </section>
+            </details>
+        </article>
+
+                <!-- Stall 9: Nescafe -->
+        <article data-loc="BH-1">
+            <div class="photo">
+                <img src="nescafe.jpeg" alt="Nescafe stall">
+                <span class="tag">BH-1</span>
+            </div>
+            <h2>Nescafe</h2>
+            <p class="where">📍 Near Central Mess-1,2</p>
+            <div class="meta">
+                <div class="feedback" data-stall="Nescafe"></div>
+                <a class="fb" href="https://docs.google.com/forms/d/e/1FAIpQLSdh4ymYw7kTpld03wAZ0K6SaILGvMwNrGmj-7fKPShJpJdGlg/viewform?usp=pp_url&amp;entry.1842969933=Nescafe" target="_blank" rel="noopener noreferrer">Give feedback</a>
+            </div>
+            <details>
+                <summary>Menu</summary>
+                <section>
+                    <h3>Sandwich</h3>
+                    <ul>
+                        <li>Veg Cheese Sandwich - ₹90</li>
+                        <li>Paneer Makhni Sandwich - ₹110</li>
+                        <li>Chipotle Paneer Sandwich (With Fries) - ₹140</li>
+                        <li>Paneer Mint Sandwich (2 Piece) - ₹50</li>
+                        <li>Special Paneer Sandwich - ₹110</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Fries</h3>
+                    <ul>
+                        <li>Salted Fries - ₹90</li>
+                        <li>Masala / Peri Peri Fries - ₹90</li>
+                        <li>Mint Fries - ₹90</li>
+                        <li>Cheesy Fries - ₹100</li>
+                        <li>Loaded Fries - ₹130</li>
+                        <li>Ultimate Fries Bucket - ₹150</li>
+                        <li>Onion Rings - ₹80</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Mojito</h3>
+                    <ul>
+                        <li>Virgin Mojito - ₹70</li>
+                        <li>Green Apple Mojito - ₹70</li>
+                        <li>Watermelon Mojito - ₹70</li>
+                        <li>Passion Fruit Mojito - ₹70</li>
+                        <li>Peach Mojito - ₹70</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Pasta</h3>
+                    <ul>
+                        <li>White Sauce Pasta - ₹110</li>
+                        <li>Red Sauce Pasta - ₹110</li>
+                        <li>Mix Sauce Pasta - ₹120</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Wrap</h3>
+                    <ul>
+                        <li>Aloo Tikki Wrap - ₹70</li>
+                        <li>Paneer Wrap - ₹90</li>
+                        <li>Veggie Loaded Wrap - ₹100</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Krusher</h3>
+                    <ul>
+                        <li>Chocolate Krusher - ₹90</li>
+                        <li>Strawberry Krusher - ₹90</li>
+                        <li>Banana Caramel - ₹90</li>
+                        <li>Mango Alphonso Krusher - ₹90</li>
+                        <li>Blueberry Krusher - ₹90</li>
+                        <li>Salted Caramel - ₹90</li>
+                        <li>Belgian Chocolate Krusher - ₹100</li>
+                        <li>Kit-Kat Krusher - ₹100</li>
+                        <li>Brownie Krusher - ₹110</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Cold Coffee</h3>
+                    <ul>
+                        <li>Add-on flavours: Irish, Caramel, Hazelnut, Tiramisu - ₹20</li>
+                        <li>Iced Americano - ₹80</li>
+                        <li>Affogato - ₹80</li>
+                        <li>Iced Latte - ₹90</li>
+                        <li>Iced Cappuccino - ₹90</li>
+                        <li>Classic Cold Coffee (with ice cream) - ₹90</li>
+                        <li>Signature Cold Coffee (with ice cream, freshly brewed) - ₹100</li>
+                        <li>Iced Mocha - ₹100</li>
+                        <li>Strong Cold Coffee - ₹110</li>
+                        <li>Spanish Latte - ₹100</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Burger</h3>
+                    <ul>
+                        <li>Veg Cheese Burger - ₹60</li>
+                        <li>Schezwan Cheese Burger - ₹70</li>
+                        <li>Mac-Paneer Burger - ₹100</li>
+                        <li>Maharaja Burger - ₹100</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Sub</h3>
+                    <ul>
+                        <li>Paneer Tikka Sub - ₹90</li>
+                        <li>Aloo Tikki Sub - ₹90</li>
+                        <li>Mix Sub - ₹110</li>
+                    </ul>
+                </section>
+            </details>
+        </article>
+
+                <!-- Stall 10: Nand Juice -->
+        <article data-loc="BH-1">
+            <div class="photo">
+                <img src="nandjuice.jpeg" alt="Nand Juice stall">
+                <span class="tag">BH-1</span>
+            </div>
+            <h2>Nand Juice</h2>
+            <p class="where">📍 Near Central Mess-1,2</p>
+            <div class="meta">
+                <div class="feedback" data-stall="Nand Juice"></div>
+                <a class="fb" href="https://docs.google.com/forms/d/e/1FAIpQLSdh4ymYw7kTpld03wAZ0K6SaILGvMwNrGmj-7fKPShJpJdGlg/viewform?usp=pp_url&amp;entry.1842969933=Nand+Juice" target="_blank" rel="noopener noreferrer">Give feedback</a>
+            </div>
+            <details>
+                <summary>Menu</summary>
+                <section>
+                    <h3>Shakes (S / M / L)</h3>
+                    <ul>
+                        <li>Banana Shake - ₹50 / ₹60 / ₹70</li>
+                        <li>Chocolate Shake - ₹50 / ₹60 / ₹70</li>
+                        <li>Cold Coffee - ₹50 / ₹60 / ₹70</li>
+                        <li>Oreo Milk Shake - ₹50 / ₹60 / ₹70</li>
+                        <li>Strawberry Shake - ₹50 / ₹60 / ₹70</li>
+                        <li>Papaya Shake - ₹50 / ₹60 / ₹70</li>
+                        <li>Butter Scotch - ₹50 / ₹60 / ₹70</li>
+                        <li>Mango Shake - ₹50 / ₹60 / ₹70</li>
+                        <li>Apple Shake - ₹50 / ₹60 / ₹70</li>
+                        <li>Vanilla Shake - ₹50 / ₹60 / ₹70</li>
+                        <li>Pineapple Shake - ₹50 / ₹60 / ₹70</li>
+                        <li>Kiwi Shake - ₹50 / ₹60 / ₹70</li>
+                        <li>Brahmi Shake - ₹50 / ₹60 / ₹70</li>
+                        <li>Black Currant Shake - ₹50 / ₹60 / ₹70</li>
+                        <li>Mango Lassi - ₹50 / ₹60 / ₹70</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Thick Shake (S / M / L)</h3>
+                    <ul>
+                        <li>KitKat Shake - ₹70 / ₹80 / ₹90</li>
+                        <li>Chocopie Shake - ₹70 / ₹80 / ₹90</li>
+                        <li>Brownie Shake - ₹70 / ₹80 / ₹90</li>
+                        <li>Oreo Shake - ₹70 / ₹80 / ₹90</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Juice (S / M / L)</h3>
+                    <ul>
+                        <li>Mausami Juice - ₹50 / ₹60 / ₹70</li>
+                        <li>Carrot Juice - ₹50 / ₹60 / ₹70</li>
+                        <li>Orange Juice - ₹50 / ₹60 / ₹70</li>
+                        <li>Mix Juice - ₹50 / ₹60 / ₹70</li>
+                        <li>Muskmelon Juice - ₹50 / ₹60 / ₹70</li>
+                        <li>Watermelon Juice - ₹50 / ₹60 / ₹70</li>
+                        <li>Pineapple Juice - ₹50 / ₹60 / ₹70</li>
+                        <li>Apple Juice - ₹50 / ₹60 / ₹70</li>
+                        <li>Grape Juice - ₹50 / ₹60 / ₹70</li>
+                        <li>Fresh Lime Soda - ₹30 / ₹40 / ₹50</li>
+                        <li>Sugar Cane Juice - ₹30 / ₹40 / ₹50</li>
+                        <li>Fresh Lime Water - ₹20 / ₹30 / ₹40</li>
+                        <li>Pomegranate Juice - ₹100 / ₹120 / ₹150</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Also Available (price not on board)</h3>
+                    <ul>
+                        <li>Fresh Fruits Salad</li>
+                        <li>Litchi Milk Shake</li>
+                        <li>Rose Milk Shake</li>
+                    </ul>
+                </section>
+                <p class="note">Fresh vegetables available</p>
+            </details>
+        </article>
+
+                <!-- Stall 11: KitchenEtte -->
+        <article data-loc="BH-1">
+            <div class="photo">
+                <img src="KE.jpeg" alt="KitchenEtte stall">
+                <span class="tag">BH-1</span>
+            </div>
+            <h2>KitchenEtte</h2>
+            <p class="where">📍 Near Central Mess-1,2</p>
+            <div class="meta">
+                <div class="feedback" data-stall="KitchenEtte"></div>
+                <a class="fb" href="https://docs.google.com/forms/d/e/1FAIpQLSdh4ymYw7kTpld03wAZ0K6SaILGvMwNrGmj-7fKPShJpJdGlg/viewform?usp=pp_url&amp;entry.1842969933=KitchenEtte" target="_blank" rel="noopener noreferrer">Give feedback</a>
+            </div>
+            <details>
+                <summary>Menu</summary>
+                <section>
+                    <h3>Thali</h3>
+                    <ul>
+                        <li>Special Thali - ₹140</li>
+                        <li>Normal Thali - ₹120</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Rice &amp; Pulao</h3>
+                    <ul>
+                        <li>Paneer + Veg Pulao - ₹145</li>
+                        <li>Paneer + Plain Rice - ₹125</li>
+                        <li>Gravy Sabji + Rice - ₹95</li>
+                        <li>Rajmah + Rice - ₹85</li>
+                        <li>Kadhi + Rice - ₹85</li>
+                        <li>Dal + Rice - ₹85</li>
+                        <li>Veg Pulao + Raita - ₹100</li>
+                        <li>Plain Rice (Half / Full) - ₹30 / ₹50</li>
+                        <li>Veg Pulao (Half / Full) - ₹40 / ₹70</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Main Course</h3>
+                    <ul>
+                        <li>Paneer Bhurji - ₹75</li>
+                        <li>Paneer Gravy - ₹75</li>
+                        <li>Spl. Sabji - ₹60</li>
+                        <li>Normal Sabji - ₹50</li>
+                        <li>Dal / Rajmah - ₹40</li>
+                        <li>Raita / Dahi - ₹30</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Tawa Se</h3>
+                    <ul>
+                        <li>Tawa Roti - ₹10</li>
+                        <li>Plain Paratha - ₹30</li>
+                        <li>Paneer Paratha - ₹65</li>
+                        <li>Lacha Paratha - ₹50</li>
+                        <li>Mix Paratha - ₹55</li>
+                        <li>Aloo Paratha - ₹45</li>
+                        <li>Gobhi Paratha - ₹45</li>
+                        <li>Onion Paratha - ₹45</li>
+                        <li>Mooli Paratha - ₹45</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Hot &amp; Cold</h3>
+                    <ul>
+                        <li>Cold Coffee - ₹60</li>
+                        <li>Bournvita Milk - ₹60</li>
+                        <li>Hot Milk - ₹40</li>
+                        <li>Hot Coffee - ₹35</li>
+                        <li>Hot Chocolate - ₹45</li>
+                        <li>Makhan - ₹15</li>
+                    </ul>
+                </section>
+                <p class="note">Packing charges extra</p>
+            </details>
+        </article>
+
+                <!-- Stall 12: South City Cafe -->
+        <article data-loc="BH-1">
+            <div class="photo">
+                <img src="SCC.jpeg" alt="South City Cafe stall">
+                <span class="tag">BH-1</span>
+            </div>
+            <h2>South City Cafe</h2>
+            <p class="where">📍 Near Central Mess-1,2</p>
+            <div class="meta">
+                <div class="feedback" data-stall="South City Cafe"></div>
+                <a class="fb" href="https://docs.google.com/forms/d/e/1FAIpQLSdh4ymYw7kTpld03wAZ0K6SaILGvMwNrGmj-7fKPShJpJdGlg/viewform?usp=pp_url&amp;entry.1842969933=South+City+Cafe" target="_blank" rel="noopener noreferrer">Give feedback</a>
+            </div>
+            <details>
+                <summary>Menu</summary>
+                <section>
+                    <h3>Dosa</h3>
+                    <ul>
+                        <li>Plain Dosa - ₹60</li>
+                        <li>Paper Dosa - ₹60</li>
+                        <li>Butter Dosa - ₹80</li>
+                        <li>Masala Dosa - ₹80</li>
+                        <li>Onion Dosa - ₹80</li>
+                        <li>Ghee Masala Dosa - ₹100</li>
+                        <li>Ghee Podi Plain Dosa - ₹90</li>
+                        <li>Ghee Podi Masala Dosa - ₹100</li>
+                        <li>Butter Masala Dosa - ₹100</li>
+                        <li>Ghee Podi Paneer Dosa - ₹120</li>
+                        <li>Mysore Masala Dosa - ₹120</li>
+                        <li>Jini Dosa - ₹120</li>
+                        <li>Kadhai Paneer Dosa - ₹130</li>
+                        <li>Schezwan Cheese Paneer Dosa - ₹130</li>
+                        <li>Cheese Chilli Paneer Dosa - ₹150</li>
+                        <li>South City Spl. Dosa - ₹200</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Idli</h3>
+                    <ul>
+                        <li>Plain Idli (4 Pcs) - ₹50</li>
+                        <li>Thatte Idli - ₹60</li>
+                        <li>Ghee Podi Idli (3 Pcs) - ₹70</li>
+                        <li>Fried Idli - ₹80</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Uttapam</h3>
+                    <ul>
+                        <li>Onion Uttapam - ₹80</li>
+                        <li>Veg. Uttapam - ₹90</li>
+                        <li>Ghee Podi Onion Uttapam - ₹100</li>
+                        <li>Paneer Uttapam - ₹110</li>
+                        <li>Cheese Uttapam - ₹120</li>
+                        <li>Ghee Podi Paneer Uttapam - ₹130</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Snacks</h3>
+                    <ul>
+                        <li>Veg. Omelette - ₹50</li>
+                        <li>Poha - ₹50</li>
+                        <li>Medhu Vada - ₹60</li>
+                        <li>Dahi Vada (2 Pcs) - ₹80</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Combos</h3>
+                    <ul>
+                        <li>Idli &amp; Vada - ₹60</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Lassi &amp; Drinks</h3>
+                    <ul>
+                        <li>Sweet Lassi - ₹50</li>
+                        <li>Salted Lassi - ₹50</li>
+                        <li>Kesar Milk - ₹100</li>
+                        <li>Chai - ₹30</li>
+                    </ul>
+                </section>
+            </details>
+        </article>
+
+                <!-- Stall 13: South City Cafe (Outlet 2) -->
+        <article data-loc="Uni-Hospital">
+            <div class="photo">
+                <img src="SCC1.jpeg" alt="South City Cafe stall">
+                <span class="tag">Uni-Hospital</span>
+            </div>
+            <h2>South City Cafe (Outlet 2)</h2>
+            <p class="where">📍 Near Uni Hospital</p>
+            <div class="meta">
+                <div class="feedback" data-stall="South City Cafe (Outlet 2)"></div>
+                <a class="fb" href="https://docs.google.com/forms/d/e/1FAIpQLSdh4ymYw7kTpld03wAZ0K6SaILGvMwNrGmj-7fKPShJpJdGlg/viewform?usp=pp_url&amp;entry.1842969933=South+City+Cafe+(Outlet+2)" target="_blank" rel="noopener noreferrer">Give feedback</a>
+            </div>
+            <details>
+                <summary>Menu</summary>
+                <section>
+                    <h3>Dosa</h3>
+                    <ul>
+                        <li>Plain Dosa - ₹60</li>
+                        <li>Paper Dosa - ₹60</li>
+                        <li>Butter Dosa - ₹80</li>
+                        <li>Masala Dosa - ₹80</li>
+                        <li>Onion Dosa - ₹80</li>
+                        <li>Ghee Masala Dosa - ₹100</li>
+                        <li>Ghee Plain Dosa - ₹80</li>
+                        <li>Ghee Podi Plain Dosa - ₹90</li>
+                        <li>Ghee Podi Masala Dosa - ₹100</li>
+                        <li>Paneer Dosa - ₹110</li>
+                        <li>Butter Masala Dosa - ₹100</li>
+                        <li>Ghee Podi Paneer Dosa - ₹120</li>
+                        <li>Mysore Masala Dosa - ₹120</li>
+                        <li>Jini Dosa - ₹120</li>
+                        <li>Schezwan Cheese Paneer Dosa - ₹130</li>
+                        <li>Open Butter Masala Dosa - ₹110</li>
+                        <li>Garlic Roast Plain Dosa - ₹100</li>
+                        <li>Garlic Roast Masala Dosa - ₹110</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Uttapam</h3>
+                    <ul>
+                        <li>Plain Uttapam - ₹70</li>
+                        <li>Onion Uttapam - ₹80</li>
+                        <li>Veg Uttapam - ₹90</li>
+                        <li>Ghee Podi Onion Uttapam - ₹100</li>
+                        <li>Paneer Uttapam - ₹120</li>
+                        <li>Ghee Podi Paneer Uttapam - ₹130</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Idli</h3>
+                    <ul>
+                        <li>Plain Idli - ₹50</li>
+                        <li>Thatte Idli - ₹60</li>
+                        <li>Button Idli - ₹70</li>
+                        <li>Ghee Podi Idli (3 Pcs) - ₹70</li>
+                        <li>Fried Idli - ₹80</li>
+                        <li>Idli Sambar - ₹70</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Snacks</h3>
+                    <ul>
+                        <li>Poha - ₹50</li>
+                        <li>Medu Vada (4 Pcs) - ₹70</li>
+                        <li>Mysore Bonda - ₹70</li>
+                        <li>Dahi Vada (2 Pcs) - ₹80</li>
+                        <li>Aloo Puri - ₹80</li>
+                        <li>Malabar Parotta + Kadhai Paneer - ₹100</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Beverage</h3>
+                    <ul>
+                        <li>Tea - ₹30</li>
+                        <li>Filter Coffee - ₹40</li>
+                        <li>Sweet Lassi - ₹50</li>
+                        <li>Salted Lassi - ₹50</li>
+                        <li>Shikanji Lemonade - ₹50</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Dessert</h3>
+                    <ul>
+                        <li>Rava Kesari - ₹70</li>
+                        <li>Gajjar Ka Halwa - ₹70</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Rice</h3>
+                    <ul>
+                        <li>Lemon Rice - ₹80</li>
+                        <li>Sambar Rice - ₹80</li>
+                    </ul>
+                </section>
+            </details>
+        </article>
+
+                <!-- Stall 14: Bokki Tokki -->
+        <article data-loc="Uni-Hospital">
+            <div class="photo">
+                <img src="BT.jpeg" alt="Bokki Tokki stall">
+                <span class="tag">Uni-Hospital</span>
+            </div>
+            <h2>Bokki Tokki</h2>
+            <p class="where">📍 Near Uni Hospital</p>
+            <div class="meta">
+                <div class="feedback" data-stall="Bokki Tokki"></div>
+                <a class="fb" href="https://docs.google.com/forms/d/e/1FAIpQLSdh4ymYw7kTpld03wAZ0K6SaILGvMwNrGmj-7fKPShJpJdGlg/viewform?usp=pp_url&amp;entry.1842969933=Bokki+Tokki" target="_blank" rel="noopener noreferrer">Give feedback</a>
+            </div>
+            <details>
+                <summary>Menu</summary>
+                <section>
+                    <h3>Momos (Steam, 8 Pcs)</h3>
+                    <ul>
+                        <li>Nutri Momo - ₹70</li>
+                        <li>Mix Veg Momo - ₹70</li>
+                        <li>Paneer Pop Momo - ₹90</li>
+                        <li>Cheesy Corn Momo - ₹100</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Gravy Momo</h3>
+                    <ul>
+                        <li>Spicy Chilly Momo - ₹90</li>
+                        <li>Tandoori Gravy Momo - ₹90</li>
+                        <li>Peanut Jhol Momo - ₹90</li>
+                        <li>Malai Creamy Momo - ₹90</li>
+                        <li>Special Makhni Momo - ₹90</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Ramyun</h3>
+                    <ul>
+                        <li>Veg Ramen Bowl (Soupy) - ₹70</li>
+                        <li>Chilly Oil Ramen (Dry) - ₹70</li>
+                        <li>Kimchi Kick Ramen (Dry) - ₹70</li>
+                        <li>Momo Love Ramen (Soupy) - ₹90</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Laphings</h3>
+                    <ul>
+                        <li>Wai Wai Laphing - ₹80</li>
+                        <li>Wai Wai Laphing Soup - ₹90</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Teokbokki</h3>
+                    <ul>
+                        <li>Gochujang Seoul Teok - ₹130</li>
+                        <li>Super Cheesy Tteok - ₹150</li>
+                        <li>Makhni Fry Teok - ₹150</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Rabokki</h3>
+                    <ul>
+                        <li>RaBokki (Ramyun + Teokbokki) - ₹130</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Corn Dog &amp; Kimchi Fries</h3>
+                    <ul>
+                        <li>Corn Dog - ₹100</li>
+                        <li>Kimchi Fries - ₹80</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Gimbap / Sushi</h3>
+                    <ul>
+                        <li>Veg Gimbap - ₹100</li>
+                        <li>Crispy Patty Gimbap - ₹130</li>
+                        <li>Crispy Paneer Gimbap - ₹150</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Spring Rolls</h3>
+                    <ul>
+                        <li>Veg Spring Rolls - ₹70</li>
+                        <li>Noodle Spring Rolls - ₹70</li>
+                        <li>Cheese &amp; Corn Spring Rolls - ₹90</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Boba Tea</h3>
+                    <ul>
+                        <li>Peach Boba - ₹80</li>
+                        <li>Taro Milk Boba Tea - ₹80</li>
+                        <li>Cold Coffee Boba - ₹80</li>
+                        <li>Hazelnut Cold Coffee Boba - ₹90</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Matcha Tea</h3>
+                    <ul>
+                        <li>Matcha Latte Love - ₹100</li>
+                        <li>Taro Milk Matcha - ₹110</li>
+                        <li>Strawberry Matcha Crush - ₹110</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Mojito</h3>
+                    <ul>
+                        <li>Green Apple Mojito - ₹60</li>
+                        <li>Virgin Mojito - ₹60</li>
+                        <li>Blue Lemonade Mojito - ₹60</li>
+                        <li>Peach Iced Tea - ₹60</li>
+                        <li>Strawberry Mojito - ₹60</li>
+                    </ul>
+                </section>
+                <p class="note">Extras: Chilly Oil +₹5, Kimchi +₹5, Cheese Slice +₹10. Ramyun "Choose Your Pack": MRP + extra.</p>
+            </details>
+        </article>
+
+                <!-- Stall 15: The Belgian Waffle Express -->
+        <article data-loc="Uni-Hospital">
+            <div class="photo">
+                <img src="BW.jpeg" alt="The Belgian Waffle Express stall">
+                <span class="tag">Uni-Hospital</span>
+            </div>
+            <h2>The Belgian Waffle Express</h2>
+            <p class="where">📍 Near Uni Hospital</p>
+            <div class="meta">
+                <div class="feedback" data-stall="The Belgian Waffle Express"></div>
+                <a class="fb" href="https://docs.google.com/forms/d/e/1FAIpQLSdh4ymYw7kTpld03wAZ0K6SaILGvMwNrGmj-7fKPShJpJdGlg/viewform?usp=pp_url&amp;entry.1842969933=The+Belgian+Waffle+Express" target="_blank" rel="noopener noreferrer">Give feedback</a>
+            </div>
+            <details>
+                <summary>Menu</summary>
+                <section>
+                    <h3>Double Chocolate Waffles</h3>
+                    <ul>
+                        <li>Chocolate Overdose - ₹100</li>
+                        <li>Dark &amp; White Fairy - ₹100</li>
+                        <li>Double Trouble - ₹110</li>
+                        <li>Nuclear Nutella - ₹120</li>
+                        <li>Biscoff Waffle - ₹120</li>
+                        <li>Trio of Chocolate - ₹120</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Fruits Filling Waffles</h3>
+                    <ul>
+                        <li>Strawberry Waffle - ₹120</li>
+                        <li>Boo-Blueberry - ₹120</li>
+                        <li>Mango Waffle - ₹120</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Chocolate Waffles</h3>
+                    <ul>
+                        <li>Belgian Chocolate - ₹100</li>
+                        <li>Kitkat Crunch - ₹110</li>
+                        <li>Cream &amp; Cookies - ₹110</li>
+                        <li>Caramello - ₹110</li>
+                        <li>Butterscotch - ₹100</li>
+                        <li>Coffee Choco - ₹100</li>
+                        <li>Tiramisu Waffle - ₹120</li>
+                        <li>Kiki &amp; Cream - ₹120</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Waffle Sundae</h3>
+                    <ul>
+                        <li>Fudge Ice-Cream - ₹120</li>
+                        <li>Heavy Weight - ₹150</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Brownies</h3>
+                    <ul>
+                        <li>Hot Chocolate Brownie - ₹50</li>
+                        <li>Brownie with Ice-Cream - ₹60</li>
+                        <li>Nutella Brownie with Ice-Cream - ₹80</li>
+                        <li>Biscoff Brownie with Ice-Cream - ₹80</li>
+                        <li>Kiki &amp; Cream Brownie with Ice-Cream - ₹80</li>
+                        <li>Choco Lava Cake - ₹50</li>
+                        <li>Choco Lava with Ice-Cream - ₹60</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Shakes</h3>
+                    <ul>
+                        <li>Brownie Shake - ₹70</li>
+                        <li>Cold Coffee - ₹70</li>
+                        <li>Brownie Cold Coffee - ₹80</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Pan Cakes</h3>
+                    <ul>
+                        <li>Belgian Chocolate Pancake - ₹100</li>
+                        <li>Kitkat Chocolate Pancake - ₹100</li>
+                        <li>Trio Chocolate Pancake - ₹110</li>
+                    </ul>
+                </section>
+            </details>
+        </article>
+
+                <!-- Stall 16: Duo Delights -->
+        <article data-loc="BH-1">
+            <div class="photo">
+                <img src="DD.jpeg" alt="Duo Delights stall">
+                <span class="tag">BH-1</span>
+            </div>
+            <h2>Duo Delights</h2>
+            <p class="where">📍 Near BH-1 (bh-1 back side)</p>
+            <div class="meta">
+                <div class="feedback" data-stall="Duo Delights"></div>
+                <a class="fb" href="https://docs.google.com/forms/d/e/1FAIpQLSdh4ymYw7kTpld03wAZ0K6SaILGvMwNrGmj-7fKPShJpJdGlg/viewform?usp=pp_url&amp;entry.1842969933=Duo+Delights" target="_blank" rel="noopener noreferrer">Give feedback</a>
+            </div>
+            <details>
+                <summary>Menu</summary>
+                <section>
+                    <h3>Pizza</h3>
+                    <ul>
+                        <li>Margherita (Mozzarella Cheese) - ₹120</li>
+                        <li>Fresh Vegioroma (Onion, Capsicum) - ₹140</li>
+                        <li>Golden Veg (Onion, Capsicum, Corn) - ₹150</li>
+                        <li>Aussie Special (Onion, Capsicum, Tomato, Olives) - ₹160</li>
+                        <li>Indi House (Onion, Capsicum, Tomato, Mushroom) - ₹160</li>
+                        <li>Hot &amp; Spicy (Onion, Capsicum, Tomato, Red Paprika) - ₹170</li>
+                        <li>Spicy Veg (Onion, Capsicum, Green Chilli, Red Paprika) - ₹170</li>
+                        <li>Mexican Lover (Onion, Capsicum, Tomato, Jalapeno) - ₹170</li>
+                        <li>Paneer Lover (Capsicum, Jalapeno, Paneer, Red Paprika) - ₹170</li>
+                        <li>Veg King (Onion, Capsicum, Mushroom, Corn, Paneer) - ₹180</li>
+                        <li>Barbeque Veg (Onion, Capsicum, Tomato, Mushroom, Paneer, BBQ Sauce) - ₹190</li>
+                        <li>Paneer Tikka (Onion, Capsicum, Jalapeno, Tikka Paneer, Red Paprika) - ₹190</li>
+                        <li>Paneer Makhani (Capsicum, Paneer, Butter Sauce) - ₹190</li>
+                        <li>Veg Queen (Onion, Capsicum, Tomato, Jalapeno, Olives, Paneer, Mushroom) - ₹210</li>
+                        <li>Veg Cheese Brust (Onion, Capsicum, Jalapeno, Paneer, Tomato, Olives) - ₹250</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Pizza Extras</h3>
+                    <ul>
+                        <li>Extra Cheese - ₹50</li>
+                        <li>Extra Topping - ₹20</li>
+                        <li>Extra Cheese Brust - ₹70</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Sides</h3>
+                    <ul>
+                        <li>French Fries - ₹50</li>
+                        <li>Masala Fries - ₹60</li>
+                        <li>Peri-Peri Fries - ₹70</li>
+                        <li>Potato Shots - ₹50</li>
+                        <li>Veggie Finger - ₹60</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Wrap</h3>
+                    <ul>
+                        <li>Veg Wrap - ₹50</li>
+                        <li>Spicy Mexican Wrap - ₹60</li>
+                        <li>Paneer Wrap - ₹70</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Burger</h3>
+                    <ul>
+                        <li>Aloo Tikki Burger - ₹40</li>
+                        <li>Chef Veg Burger - ₹40</li>
+                        <li>Cheese Burger - ₹60</li>
+                        <li>Spicy Mexican Burger - ₹60</li>
+                        <li>Jumbo Maharaja Burger - ₹70</li>
+                        <li>Paneer Zinger Burger - ₹80</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Sandwich</h3>
+                    <ul>
+                        <li>Veg Cold Sandwich - ₹40</li>
+                        <li>Veg Grilled Sandwich - ₹40</li>
+                        <li>Cheese Corn Sandwich - ₹50</li>
+                        <li>Paneer Sandwich - ₹50</li>
+                        <li>Mushroom Sandwich - ₹60</li>
+                        <li>Cheese Brust Sandwich - ₹70</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Garlic Bread</h3>
+                    <ul>
+                        <li>Garlic Bread with Cheese - ₹60</li>
+                        <li>Stuffed Garlic Bread - ₹80</li>
+                    </ul>
+                </section>
+                <p class="note">Call: 78886-48860</p>
+            </details>
+        </article>
+
+                <!-- Stall 17: MB Food Square (Oven Xpress) -->
+        <article data-loc="Block-8">
+            <div class="photo">
+                <img src="MBFS.jpeg" alt="MB Food Square building">
+                <span class="tag">Block-8</span>
+            </div>
+            <h2>MB Food Square (Oven Xpress)</h2>
+            <p class="where">📍 Near Block-8</p>
+            <div class="meta">
+                <div class="feedback" data-stall="MB Food Square (Oven Xpress)"></div>
+                <a class="fb" href="https://docs.google.com/forms/d/e/1FAIpQLSdh4ymYw7kTpld03wAZ0K6SaILGvMwNrGmj-7fKPShJpJdGlg/viewform?usp=pp_url&amp;entry.1842969933=MB+Food+Square+(Oven+Xpress)" target="_blank" rel="noopener noreferrer">Give feedback</a>
+            </div>
+            <details>
+                <summary>Menu</summary>
+                <section>
+                    <h3>Crispy Chicken</h3>
+                    <ul>
+                        <li>Chicken Bucket (2 Pcs) - ₹139</li>
+                        <li>Chicken Bucket (4 Pcs) - ₹249</li>
+                        <li>Chicken Bucket (8 Pcs) - ₹449</li>
+                        <li>Chicken Popcorn (S / M / L) - ₹160 / ₹270 / ₹510</li>
+                        <li>Chicken Nuggets (10 Pcs) - ₹180</li>
+                        <li>Chicken Wings (6 Pcs) - ₹180</li>
+                        <li>Mexican Chicken Wings (5 Pcs) - ₹180</li>
+                        <li>Barbeque Chicken Seekh Kebab - ₹180</li>
+                        <li>Barbeque Mutton Seekh Kebab - ₹220</li>
+                        <li>Barbeque Chicken Wings (5 Pcs) - ₹200</li>
+                        <li>Chicken Strips - ₹220</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Crispy Chicken (S / M / L)</h3>
+                    <ul>
+                        <li>Chicken Wings - ₹160 / ₹340 / ₹559</li>
+                        <li>Chicken Strips - ₹120 / ₹240 / ₹559</li>
+                        <li>Chicken Bucket - ₹249 / ₹499</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Biryani (Half / Full)</h3>
+                    <ul>
+                        <li>Hydrabadi Chicken Biryani - ₹150 / ₹220</li>
+                        <li>Fried Chicken Biryani - ₹150 / ₹220</li>
+                        <li>Chicken Handi Biryani (Full only) - ₹280</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Rice Bowl</h3>
+                    <ul>
+                        <li>Chicken Rice Bowl - ₹140</li>
+                        <li>Double Chicken Rice Bowl - ₹160</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Tandoori Chicken (Half / Full)</h3>
+                    <ul>
+                        <li>Tandoori Chicken - ₹280 / ₹450</li>
+                        <li>Irani Chicken - ₹280 / ₹450</li>
+                        <li>Chicken Malai Tikka - ₹320 / ₹480</li>
+                        <li>Chicken Afgani - ₹280 / ₹450</li>
+                        <li>Achari Chicken Tikka - ₹320 / ₹480</li>
+                        <li>Chicken Tikka - ₹320 / ₹480</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Indian Combo Meals</h3>
+                    <ul>
+                        <li>Plain Rice - ₹70</li>
+                        <li>Butter Chicken + Pulao / 3 Roti / Butter Naan - ₹180</li>
+                        <li>Kadhai Chicken + Pulao / 3 Roti / Butter Naan - ₹180</li>
+                        <li>Non-Veg Thali (Butter Chicken + Dal Makhani + 2 Chapati + Rice + Salad) - ₹200</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Breads</h3>
+                    <ul>
+                        <li>Tawa Roti - ₹12</li>
+                        <li>Tandoori Roti - ₹12</li>
+                        <li>Tawa Butter Roti - ₹15</li>
+                        <li>Tandoori Butter Roti - ₹15</li>
+                        <li>Missi Roti - ₹30</li>
+                        <li>Plain Naan - ₹30</li>
+                        <li>Butter Naan - ₹40</li>
+                        <li>Garlic Naan - ₹45</li>
+                        <li>Plain Prantha - ₹30</li>
+                        <li>Lacha Prantha - ₹30</li>
+                        <li>Hari Mirch Prantha - ₹50</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Salad / Papad</h3>
+                    <ul>
+                        <li>Green Salad - ₹50</li>
+                        <li>Plain Dahi - ₹50</li>
+                        <li>Boondi Raita - ₹60</li>
+                        <li>Mix Raita - ₹60</li>
+                        <li>Pineapple Raita - ₹80</li>
+                        <li>Masala Papad Salad - ₹100</li>
+                        <li>Peanut Salad - ₹100</li>
+                        <li>All Veggie Salad - ₹180</li>
+                        <li>Chicken Veggie Salad - ₹250</li>
+                        <li>Chicken Tikka Salad - ₹200</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Chinese</h3>
+                    <ul>
+                        <li>Chicken Spring Roll - ₹149</li>
+                        <li>Chilly Chicken (Half / Full) - ₹230 / ₹420</li>
+                        <li>Chilly Chicken Boneless (Half / Full) - ₹270 / ₹450</li>
+                        <li>Chicken 65 (Half / Full) - ₹240 / ₹430</li>
+                        <li>Chinese Combo: Chicken Chilly + Rice/Noodles - ₹180</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Momos</h3>
+                    <ul>
+                        <li>Chicken Steam Momos (7 Pcs) - ₹140</li>
+                        <li>Chicken Fried Momos (7 Pcs) - ₹150</li>
+                        <li>Chicken Kurkure Momos - ₹160</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Burgers</h3>
+                    <ul>
+                        <li>Chicken Burger - ₹120</li>
+                        <li>Chicken Cheese Burger - ₹150</li>
+                        <li>Chicken Maharaja Burger - ₹180</li>
+                        <li>Egg Omelette Burger - ₹100</li>
+                        <li>Chicken Mushroom Burger - ₹120</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Sandwiches</h3>
+                    <ul>
+                        <li>Chicken Sandwich - ₹150</li>
+                        <li>Chicken Cheese Sandwich - ₹180</li>
+                        <li>Chicken Mushroom Sandwich - ₹150</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Sub</h3>
+                    <ul>
+                        <li>Chicken Cheese Sub - ₹150</li>
+                        <li>Tandoori Chicken Sub - ₹170</li>
+                        <li>Chicken Mushroom Sub - ₹130</li>
+                    </ul>
+                </section>
+            </details>
+        </article>
+
+                <!-- Stall 18: Sandy Sandwich -->
+        <article data-loc="BH-1">
+            <div class="photo">
+                <img src="SS.jpeg" alt="Sandy Sandwich stall">
+                <span class="tag">BH-1</span>
+            </div>
+            <h2>Sandy Sandwich</h2>
+            <p class="where">📍 Near BH-1 (BH-1 backside)</p>
+            <div class="meta">
+                <div class="feedback" data-stall="Sandy Sandwich"></div>
+                <a class="fb" href="https://docs.google.com/forms/d/e/1FAIpQLSdh4ymYw7kTpld03wAZ0K6SaILGvMwNrGmj-7fKPShJpJdGlg/viewform?usp=pp_url&amp;entry.1842969933=Sandy+Sandwich" target="_blank" rel="noopener noreferrer">Give feedback</a>
+            </div>
+            <details>
+                <summary>Menu</summary>
+                <section>
+                    <h3>Grilled Sandwich (Half / Full)</h3>
+                    <ul>
+                        <li>Veg Grilled Sandwich - ₹40 / ₹80</li>
+                        <li>Potato Grilled Sandwich - ₹50 / ₹100</li>
+                        <li>Corn Delight Sandwich - ₹50 / ₹100</li>
+                        <li>Pasta Grilled Sandwich - ₹60 / ₹120</li>
+                        <li>Spicy Mushroom Sandwich - ₹60 / ₹120</li>
+                        <li>Mix Fruit Jam Sandwich - ₹60 / ₹120</li>
+                        <li>Paneer Tikka Sandwich - ₹70 / ₹120</li>
+                        <li>Chilly Paneer Sandwich - ₹70 / ₹120</li>
+                        <li>Paneer &amp; Corn Sandwich - ₹70 / ₹130</li>
+                        <li>Cheese Corn Sandwich - ₹70 / ₹130</li>
+                        <li>Spl. Sandy Mix Veg Sandwich - ₹70 / ₹130</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Veg. Grilled Burger</h3>
+                    <ul>
+                        <li>Veg Burger - ₹40</li>
+                        <li>Spicy Veg. Burger - ₹50</li>
+                        <li>Cheese Slice Burger - ₹60</li>
+                        <li>Double Tikki Burger - ₹70</li>
+                        <li>Corn Burger - ₹70</li>
+                        <li>Pineapple Burger - ₹70</li>
+                        <li>Paneer Burger - ₹80</li>
+                        <li>Aloo Patty Burger (with Fries) - ₹80</li>
+                        <li>Pasta Burger (with Fries) - ₹90</li>
+                        <li>Spl. Sandy Paneer Burger (with Fries) - ₹100</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Fries</h3>
+                    <ul>
+                        <li>Salted Fries - ₹50</li>
+                        <li>Masala Fries - ₹60</li>
+                        <li>Peri Peri Fries - ₹70</li>
+                        <li>Cheesy Fries - ₹80</li>
+                        <li>Potato Veggi. (14 Pcs) - ₹90</li>
+                        <li>Baked Cheesy Fries - ₹100</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Pasta (Small Normal / Small Baked / Medium Normal / Medium Baked)</h3>
+                    <ul>
+                        <li>Sizzling Tangy Red Pasta - ₹70 / ₹90 / ₹105 / ₹120</li>
+                        <li>Creamy White Pasta - ₹70 / ₹90 / ₹105 / ₹120</li>
+                        <li>Exotic Mix Pasta - ₹80 / ₹100 / ₹120 / ₹135</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Combo</h3>
+                    <ul>
+                        <li>Paneer Tikka Pizza (10 inch) + Juice - ₹200</li>
+                        <li>Burger + Fries + Juice - ₹100</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Fresh Hand Made Pizza (S / M / L)</h3>
+                    <ul>
+                        <li>Margherita Pizza - ₹100 / ₹120 / ₹230</li>
+                        <li>Farm House Pizza - ₹120 / ₹140 / ₹250</li>
+                        <li>Spicy Veg. Pizza - ₹120 / ₹140 / ₹250</li>
+                        <li>Paneer Lover Pizza - ₹130 / ₹160 / ₹260</li>
+                        <li>Corn Delight Pizza - ₹130 / ₹160 / ₹260</li>
+                        <li>Mushroom Spicy Pizza - ₹130 / ₹170 / ₹270</li>
+                        <li>Penne Pasta Pizza - ₹130 / ₹180 / ₹280</li>
+                        <li>Pineapple Pizza - ₹140 / ₹190 / ₹280</li>
+                        <li>Paneer Peri Peri - ₹140 / ₹190 / ₹280</li>
+                        <li>Tandoori Paneer Pizza - ₹140 / ₹190 / ₹290</li>
+                        <li>Paneer Makhani Pizza - ₹140 / ₹190 / ₹290</li>
+                        <li>Chilly Paneer Pizza - ₹140 / ₹190 / ₹290</li>
+                        <li>Paneer &amp; Corn Pizza - ₹140 / ₹190 / ₹290</li>
+                        <li>Spl. Sandy Pizza (Fully Loaded) - ₹150 / ₹200 / ₹320</li>
+                        <li>Cheese Burst Pizza - ₹170 / ₹250 / ₹300</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Wrap and Extras</h3>
+                    <ul>
+                        <li>Veg Wrap - ₹50</li>
+                        <li>Aloo Tikki Wrap - ₹60</li>
+                        <li>Corn Wrap - ₹60</li>
+                        <li>Mushroom Wrap - ₹70</li>
+                        <li>Paneer Tikka Wrap - ₹70</li>
+                        <li>Peri Peri Paneer Wrap - ₹80</li>
+                        <li>Sandy Spl. Mix Wrap - ₹80</li>
+                        <li>Extra Cheese Topping - ₹40</li>
+                        <li>Extra Veg. Topping - ₹15</li>
+                        <li>Extra Burst Topping - ₹50</li>
+                    </ul>
+                </section>
+                <p class="note">Dips: White Cheesy / Mint / Tandoori - ₹10</p>
+            </details>
+        </article>
+
+        <!-- shown when no stall has the searched dish -->
+        <p id="noResults" hidden>No stall found for that dish 😕</p>
+    </main>
+</body>
+</html>
